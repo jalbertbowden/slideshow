@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head dir="ltr" lang="en-us" profile="http://purl.org/uF/2008/03/ http://www.w3.org/2006/03/hcard http://gmpg.org/xfn/11">
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>Unobtrusive JavaScript - JavaScript Image Gallery (ALA) :: webDev</title>
+<style>.slideshow-ala{border: 1px solid #999; padding: 1em; margin: 0 0 15px 0}</style>
+	</head>
+	<body>
+		<div id="content">
+			<div class="entry">		
+	<script type="text/javascript" language="javascript">
+	function showPic (whichpic) { 
+		if (document.getElementById) { 
+			document.getElementById('placeholder').src = whichpic.href; 
+			if (whichpic.title) { 
+				document.getElementById('desc').childNodes[0].nodeValue = whichpic.title; 
+			} else { 
+				document.getElementById('desc').childNodes[0].nodeValue = whichpic.childNodes[0].nodeValue; 
+			} 
+			return false; 
+		} else { 
+			return true; 
+		} 
+	}
+	</script>
+	<div class="slideshow-ala">
+		<ul>
+			<li><a onclick="return showPic(this)" href="http://dev.bowdenweb.com/a/i/dev/devref/learn-python.png" title="A bunch of bananas on a table">some bananas</a></li>
+			<li><a onclick="return showPic(this)" href="http://dev.bowdenweb.com/a/i/dev/devref/geek-philosopher-logo.jpg" title="Condiments in a Chinese restaurant">two bottles</a></li>
+			<li><a onclick="return showPic(this)" href="http://dev.bowdenweb.com/a/i/dev/devref/html5.sourceforge-the-html5-center-header.png" title="Seashells on a table">some shells</a></li>
+		</ul>
+		<p id="desc">Choose an image to begin</p>
+			<img id="placeholder" src="http://dev.bowdenweb.com/a/i/dev/devref/learn-python.png" alt="" />
+		</div>
+		<p>There you have it: a simple JavaScript image gallery. It degrades gracefully so that older browsers can still follow the links and see the images. It works as expected on IE5+ and Netscape 6+ on Windows and Mac. It also works in Safari and all the various flavors of Mozilla like Firebird and Camino.</p>
+	</div>
+</div>	<!-- closediv.entry -->
+      	<p><cite><a class="alistapart" href="http://www.alistapart.com/articles/imagegallery" title="JavaScript Image Gallery - A List Apart">JavaScript Image Gallery - A List Apart</a></cite></p>
+    </div>
+  </body>
+</html>
